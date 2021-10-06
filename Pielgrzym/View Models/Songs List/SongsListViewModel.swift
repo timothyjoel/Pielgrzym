@@ -1,0 +1,74 @@
+//
+//  SongsListViewModel.swift
+//  Pielgrzym
+//
+//  Created by Tymoteusz Stokarski on 29/09/2021.
+//
+
+import SwiftUI
+import Combine
+
+class SongsListViewModel: ObservableObject {
+    
+//    @ObservedObject var db = DatabaseManager()
+    @Published var songs: [Song] = []
+    @Published var state: State = .loading
+    private var cancellable: AnyCancellable?
+    
+    var searchPlaceholder = "Wprowadź tytuł pieśni"
+    var title = "Śpiewnik Pielgrzyma"
+    
+    // MARK: - Initializers
+    
+    init() {
+        loadSongs()
+    }
+    
+    private func loadSongs() {
+        self.state = .loading
+        songs.removeAll()
+        guard let url = URL(string: URLPath.pielgrzym) else { self.state = .failed; return }
+        self.cancellable = URLSession.shared.dataTaskPublisher(for: url)
+            .tryMap { output in
+                guard let response = output.response as? HTTPURLResponse, response.statusCode == 200 else { self.state = .failed
+                    throw LoadingError.generalError
+                }
+                return output.data
+        }
+        .receive(on: RunLoop.main)
+        .decode(type: [Song].self, decoder: JSONDecoder())
+        .replaceError(with: [])
+        .eraseToAnyPublisher()
+        .sink(receiveCompletion: { completion in
+            switch completion {
+            case .finished:
+                break
+            case .failure(let error):
+                fatalError(error.localizedDescription)
+            }
+        }, receiveValue: { songs in
+            self.songs = songs
+            print(songs.count)
+            self.state = .success
+        })
+    }
+    
+}
+
+extension  SongsListViewModel {
+    
+    public enum State {
+        case loading, success, failed
+    }
+
+    public struct URLPath {
+        static let pielgrzym: String = "https://raw.githubusercontent.com/timothyjoel/Pielgrzym/main/pielgrzym.json"
+    }
+
+    public enum LoadingError: LocalizedError {
+        case generalError
+    }
+    
+}
+
+

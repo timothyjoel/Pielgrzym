@@ -11,7 +11,7 @@ import SwiftUI
 struct PielgrzymApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SongsListView()
         }
     }
 }

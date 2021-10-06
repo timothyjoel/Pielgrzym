@@ -7,16 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E425F034270E4AF100568436 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E425F033270E4AF100568436 /* SearchBar.swift */; };
+		E425F036270E4C3300568436 /* Ext+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E425F035270E4C3300568436 /* Ext+Color.swift */; };
+		E42DDEA2270D022200E0273E /* pielgrzym.json in Resources */ = {isa = PBXBuildFile; fileRef = E42DDEA1270D022200E0273E /* pielgrzym.json */; };
+		E42DDEA6270D027000E0273E /* SongSectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DDEA5270D027000E0273E /* SongSectionType.swift */; };
+		E42DDEA9270D034000E0273E /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DDEA8270D033F00E0273E /* Song.swift */; };
+		E42DDEAB270D036700E0273E /* SongSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DDEAA270D036700E0273E /* SongSection.swift */; };
+		E42DDEB1270D085000E0273E /* NavigationStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DDEAD270D085000E0273E /* NavigationStep.swift */; };
+		E42DDEB2270D085000E0273E /* NavigationDismissStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DDEAE270D085000E0273E /* NavigationDismissStep.swift */; };
+		E42DDEB3270D085000E0273E /* UIKitNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DDEAF270D085000E0273E /* UIKitNavigation.swift */; };
+		E42DDEB4270D085000E0273E /* RootNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DDEB0270D085000E0273E /* RootNavigationView.swift */; };
+		E42DDEB6270D08F900E0273E /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DDEB5270D08F900E0273E /* DatabaseManager.swift */; };
+		E4B61CFA270BB2BC001F9086 /* SongsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B61CF9270BB2BC001F9086 /* SongsListViewModel.swift */; };
 		E4FDF7752703C8560025D0CB /* PielgrzymApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FDF7742703C8560025D0CB /* PielgrzymApp.swift */; };
-		E4FDF7772703C8560025D0CB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FDF7762703C8560025D0CB /* ContentView.swift */; };
+		E4FDF7772703C8560025D0CB /* SongsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FDF7762703C8560025D0CB /* SongsListView.swift */; };
 		E4FDF7792703C8580025D0CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4FDF7782703C8580025D0CB /* Assets.xcassets */; };
 		E4FDF77C2703C8580025D0CB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4FDF77B2703C8580025D0CB /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E425F033270E4AF100568436 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		E425F035270E4C3300568436 /* Ext+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+Color.swift"; sourceTree = "<group>"; };
+		E42DDEA1270D022200E0273E /* pielgrzym.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pielgrzym.json; sourceTree = SOURCE_ROOT; };
+		E42DDEA5270D027000E0273E /* SongSectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongSectionType.swift; sourceTree = "<group>"; };
+		E42DDEA8270D033F00E0273E /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		E42DDEAA270D036700E0273E /* SongSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongSection.swift; sourceTree = "<group>"; };
+		E42DDEAD270D085000E0273E /* NavigationStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationStep.swift; sourceTree = "<group>"; };
+		E42DDEAE270D085000E0273E /* NavigationDismissStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationDismissStep.swift; sourceTree = "<group>"; };
+		E42DDEAF270D085000E0273E /* UIKitNavigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitNavigation.swift; sourceTree = "<group>"; };
+		E42DDEB0270D085000E0273E /* RootNavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNavigationView.swift; sourceTree = "<group>"; };
+		E42DDEB5270D08F900E0273E /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		E4B61CF9270BB2BC001F9086 /* SongsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsListViewModel.swift; sourceTree = "<group>"; };
 		E4FDF7712703C8560025D0CB /* Pielgrzym.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pielgrzym.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4FDF7742703C8560025D0CB /* PielgrzymApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PielgrzymApp.swift; sourceTree = "<group>"; };
-		E4FDF7762703C8560025D0CB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E4FDF7762703C8560025D0CB /* SongsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsListView.swift; sourceTree = "<group>"; };
 		E4FDF7782703C8580025D0CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4FDF77B2703C8580025D0CB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E4FDF77D2703C8580025D0CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -33,6 +57,141 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E425F032270E4AE300568436 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				E425F033270E4AF100568436 /* SearchBar.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		E42DDE92270D012100E0273E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E42DDE9B270D019F00E0273E /* Liked Songs List */,
+				E42DDE93270D012700E0273E /* Songs List */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E42DDE93270D012700E0273E /* Songs List */ = {
+			isa = PBXGroup;
+			children = (
+				E4FDF7762703C8560025D0CB /* SongsListView.swift */,
+				E425F032270E4AE300568436 /* Subviews */,
+			);
+			path = "Songs List";
+			sourceTree = "<group>";
+		};
+		E42DDE95270D013F00E0273E /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				E42DDE9C270D01AB00E0273E /* Liked Songs List */,
+				E42DDE9A270D018300E0273E /* Songs List */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		E42DDE96270D014B00E0273E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E42DDEA7270D032F00E0273E /* Song */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E42DDE9A270D018300E0273E /* Songs List */ = {
+			isa = PBXGroup;
+			children = (
+				E4B61CF9270BB2BC001F9086 /* SongsListViewModel.swift */,
+			);
+			path = "Songs List";
+			sourceTree = "<group>";
+		};
+		E42DDE9B270D019F00E0273E /* Liked Songs List */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Liked Songs List";
+			sourceTree = "<group>";
+		};
+		E42DDE9C270D01AB00E0273E /* Liked Songs List */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Liked Songs List";
+			sourceTree = "<group>";
+		};
+		E42DDE9D270D01C900E0273E /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				E42DDE9E270D01D200E0273E /* Database */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		E42DDE9E270D01D200E0273E /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				E42DDEA1270D022200E0273E /* pielgrzym.json */,
+				E42DDEB5270D08F900E0273E /* DatabaseManager.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		E42DDE9F270D01EB00E0273E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E425F035270E4C3300568436 /* Ext+Color.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E42DDEA0270D01F500E0273E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E42DDEAC270D085000E0273E /* Navigation */,
+				E42DDEA4270D023800E0273E /* Objects */,
+				E42DDEA3270D023200E0273E /* Views */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		E42DDEA3270D023200E0273E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E42DDEA4270D023800E0273E /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		E42DDEA7270D032F00E0273E /* Song */ = {
+			isa = PBXGroup;
+			children = (
+				E42DDEA8270D033F00E0273E /* Song.swift */,
+				E42DDEAA270D036700E0273E /* SongSection.swift */,
+				E42DDEA5270D027000E0273E /* SongSectionType.swift */,
+			);
+			path = Song;
+			sourceTree = "<group>";
+		};
+		E42DDEAC270D085000E0273E /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				E42DDEAD270D085000E0273E /* NavigationStep.swift */,
+				E42DDEAE270D085000E0273E /* NavigationDismissStep.swift */,
+				E42DDEAF270D085000E0273E /* UIKitNavigation.swift */,
+				E42DDEB0270D085000E0273E /* RootNavigationView.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		E4FDF7682703C8560025D0CB = {
 			isa = PBXGroup;
 			children = (
@@ -53,7 +212,12 @@
 			isa = PBXGroup;
 			children = (
 				E4FDF7742703C8560025D0CB /* PielgrzymApp.swift */,
-				E4FDF7762703C8560025D0CB /* ContentView.swift */,
+				E42DDE92270D012100E0273E /* Views */,
+				E42DDE95270D013F00E0273E /* View Models */,
+				E42DDE96270D014B00E0273E /* Models */,
+				E42DDE9D270D01C900E0273E /* Managers */,
+				E42DDE9F270D01EB00E0273E /* Extensions */,
+				E42DDEA0270D01F500E0273E /* Helpers */,
 				E4FDF7782703C8580025D0CB /* Assets.xcassets */,
 				E4FDF77D2703C8580025D0CB /* Info.plist */,
 				E4FDF77A2703C8580025D0CB /* Preview Content */,
@@ -127,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4FDF77C2703C8580025D0CB /* Preview Assets.xcassets in Resources */,
+				E42DDEA2270D022200E0273E /* pielgrzym.json in Resources */,
 				E4FDF7792703C8580025D0CB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,7 +303,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4FDF7772703C8560025D0CB /* ContentView.swift in Sources */,
+				E425F034270E4AF100568436 /* SearchBar.swift in Sources */,
+				E42DDEA9270D034000E0273E /* Song.swift in Sources */,
+				E42DDEB2270D085000E0273E /* NavigationDismissStep.swift in Sources */,
+				E425F036270E4C3300568436 /* Ext+Color.swift in Sources */,
+				E42DDEB4270D085000E0273E /* RootNavigationView.swift in Sources */,
+				E42DDEA6270D027000E0273E /* SongSectionType.swift in Sources */,
+				E4FDF7772703C8560025D0CB /* SongsListView.swift in Sources */,
+				E42DDEB1270D085000E0273E /* NavigationStep.swift in Sources */,
+				E42DDEAB270D036700E0273E /* SongSection.swift in Sources */,
+				E42DDEB6270D08F900E0273E /* DatabaseManager.swift in Sources */,
+				E4B61CFA270BB2BC001F9086 /* SongsListViewModel.swift in Sources */,
+				E42DDEB3270D085000E0273E /* UIKitNavigation.swift in Sources */,
 				E4FDF7752703C8560025D0CB /* PielgrzymApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
