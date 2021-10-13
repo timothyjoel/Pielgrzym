@@ -9,10 +9,7 @@ import SwiftUI
 
 extension Color {
     
-    static var PPink = Color(UIColor.systemPink)
-    static var PBackground = Color("background")
-    static var PLabel = Color("label")
-    static var PView = Color("view")
-    static var PSectionTitle = Color("sectionTitle")
+    static var background = Color(UIColor.systemBackground)
+    static var label = Color(UIColor.label)
     
 }

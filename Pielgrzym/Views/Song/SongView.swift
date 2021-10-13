@@ -13,7 +13,7 @@ struct SongView: View {
     
     var body: some View {
         
-        VStack {
+        VStack(spacing: 8) {
             NavigationTitleView(title: vm.title)
             List {
                 AuthorHeader(author: vm.author)
@@ -42,7 +42,7 @@ struct NavigationTitleView: View {
         HStack {
             Text(title)
                 .font(.system(size: 30, weight: .semibold, design: .rounded))
-                .foregroundColor(Color.PLabel)
+                .foregroundColor(.label)
             Spacer()
         }.padding(.horizontal)
     }

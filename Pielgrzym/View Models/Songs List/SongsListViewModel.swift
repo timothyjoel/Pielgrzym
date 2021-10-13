@@ -15,6 +15,7 @@ class SongsListViewModel: ObservableObject {
     private var cancellable: AnyCancellable?
     
     var searchPlaceholder = "Wprowadź tytuł pieśni"
+    var loaderText = "Ładowanie pieśni..."
     var title = "Śpiewnik Pielgrzyma"
     
     // MARK: - Initializers
@@ -23,7 +24,7 @@ class SongsListViewModel: ObservableObject {
         loadSongs()
     }
     
-    private func loadSongs() {
+    public func loadSongs() {
         self.state = .loading
         songs.removeAll()
         guard let url = URL(string: URLPath.pielgrzym) else { self.state = .failed; return }

@@ -16,7 +16,7 @@ struct AuthorHeader: View {
             
             HStack {
                 Text(author)
-                    .font(.system(size: 16, weight: .regular, design: .rounded))
+                    .font(.text)
                     .lineLimit(nil)
                     .padding(.horizontal, 16)
                     .padding(.top, 20)
@@ -25,21 +25,19 @@ struct AuthorHeader: View {
             }
             .overlay(
                 RoundedRectangle(cornerRadius: 8)
-                    .stroke(Color.PLabel, lineWidth: 1.5))
+                    .stroke(Color.label, lineWidth: 1.5))
             .padding(.top, 16)
             .padding(.bottom, 8)
             VStack {
                 HStack {
                     HStack(spacing: 4) {
-                        Image(icon: Icon.Song.author)
-                            .frame(width: 24, height: 24)
-                            .foregroundColor(Color.purple)
+                        SongSectionIcon(image: .author, color: .purple)
                         Text("Autor")
-                            .font(.system(size: 16, weight: .semibold, design: .rounded))
-                            .foregroundColor(Color.PLabel)
+                            .font(.header)
+                            .foregroundColor(.label)
                     }
                     .padding(.horizontal, 4)
-                    .background(Color.PBackground)
+                    .background(Color.background)
                     Spacer()
                 }
                 .padding(.leading, 24)
@@ -48,6 +46,5 @@ struct AuthorHeader: View {
         }
         .hideRowSeparator()
         .padding(.horizontal, 16)
-        .background(RoundedCorners(color: .PBackground))
     }
 }

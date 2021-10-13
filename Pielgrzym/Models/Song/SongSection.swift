@@ -26,7 +26,7 @@ public struct SongSection: Decodable, Hashable {
         type.title
     }
     
-    public var icon: IconRepresentable {
+    public var icon: IconImage.Song {
         type.icon
     }
     public var color: Color {

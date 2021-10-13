@@ -42,12 +42,12 @@ public enum SongSectionType: String, Decodable {
         
     }
     
-    var icon: IconRepresentable {
+    var icon: IconImage.Song {
         switch self {
         case .C:
-            return Icon.Song.chorus
+            return .chorus
         default:
-            return Icon.Song.verse
+            return .verse
         }
     }
     

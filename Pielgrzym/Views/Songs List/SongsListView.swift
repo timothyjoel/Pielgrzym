@@ -14,41 +14,37 @@ struct SongsListView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
+            VStack(spacing: 8) {
                 if self.vm.state == .loading {
-                    VStack (spacing: 40) {
-                        ProgressView()
-                            .progressViewStyle(CircularProgressViewStyle())
-                        Text("Ładowanie pieśni...")
-                            .font(.system(size: 16, weight: .semibold, design: .default))
-                            .foregroundColor(.PLabel)
-                    }
-                    .foregroundColor(.blue)
+                    LoaderView(loaderText: vm.loaderText)
+                }
+                if self.vm.state == .success {
+                    NavigationTitleView(title: vm.title)
+                    SearchBar(placeholder: vm.searchPlaceholder, text: $searchEntry)
+                    .padding(.horizontal, 8)
+                    SongsList(searchEntry: $searchEntry, songs: $vm.songs)
+                }
+            }
+            .background(Color.background)
+            .toolbar {
+                
+                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        vm.loadSongs()
+                    }, label: {
+                        NavigationIcon(image: .reload)
+                    })
                 }
                 
-                if self.vm.state == .success {
-                    SearchBar(placeholder: vm.searchPlaceholder, text: $searchEntry)
-                    .padding(.horizontal, 12)
-                    List {
-                        ForEach(self.vm.songs.enumerated().filter({ (offset, song) -> Bool in
-                            searchEntry.isEmpty ? true : song.title.lowercased()
-                                .contains(searchEntry.lowercased())
-                        }), id: \.element) { num, song in
-                            let vm = SongViewModel(song: song, id: num+1)
-                            NavigationLink(destination: SongView(vm: vm)) {
-                                HStack {
-                                    Text("\(num+1).")
-                                    Text(song.title)
-                                }
-                            }
-                        }
-                    }
-                    .listStyle(PlainListStyle())
-                    .navigationBarTitle(Text(vm.title))
+                ToolbarItemGroup(placement: .navigationBarLeading) {
+                    Button(action: {
+                        print("menu tapped")
+                    }, label: {
+                        NavigationIcon(image: .reload)
+                    })
                 }
                 
             }
-            .background(Color.PBackground)
         }
     }
 }

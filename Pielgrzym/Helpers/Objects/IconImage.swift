@@ -1,5 +1,5 @@
 //
-//  Icon.swift
+//  IconImage.swift
 //  Pielgrzym
 //
 //  Created by Tymoteusz Stokarski on 11/10/2021.
@@ -11,35 +11,39 @@ public protocol IconRepresentable {
     var name: String { get }
 }
 
-public enum Icon {
-    
+public enum IconImage {
+
     case navigation(Navigation)
     case song(Song)
     
 }
 
-extension Icon {
+extension IconImage {
     
     public enum Navigation: IconRepresentable {
+        
         case heart
         case share
         case reload
+        case menu
         
         public var name: String {
             switch self {
             case .heart:
-                return "TODO"
+                return "heart.fill"
             case .reload:
-                return "TODO"
+                return "arrow.clockwise"
             case .share:
-                return "TODO"
+                return "square.and.arrow.up"
+            case .menu:
+                return "line.3.horizontal"
             }
         }
     }
     
 }
 
-extension Icon {
+extension IconImage {
     
     public enum Song: IconRepresentable {
         
@@ -58,7 +62,5 @@ extension Icon {
             }
         }
     }
-    
-    
     
 }

@@ -15,9 +15,8 @@ struct SectionView: View {
         ZStack {
             HStack {
                 Text(section.text)
-                    .font(.system(size: 16, weight: .regular, design: .rounded))
+                    .font(.text)
                     .lineLimit(nil)
-                    .background(Color.pink)
                     .padding(.horizontal, 16)
                     .padding(.top, 20)
                     .padding(.bottom, 16)
@@ -25,28 +24,25 @@ struct SectionView: View {
             }
             .overlay(
                 RoundedRectangle(cornerRadius: 8)
-                    .stroke(Color.PLabel, lineWidth: 1.5))
+                    .stroke(Color.label, lineWidth: 1.5))
             .padding(.top, 16)
             .padding(.bottom, 8)
             VStack {
                 HStack {
                     HStack(spacing: 4) {
-                        Image(icon: section.icon)
-                            .frame(width: 24, height: 24)
-                            .foregroundColor(section.color)
+                        SongSectionIcon(image: section.icon, color: section.color)
                         Text(section.part)
-                            .font(.system(size: 16, weight: .semibold, design: .rounded))
-                            .foregroundColor(Color.PLabel)
+                            .font(.header)
+                            .foregroundColor(Color.label)
                     }
                     .padding(.horizontal, 4)
-                    .background(Color.PBackground)
+                    .background(Color.background)
                     Spacer()
                 }
                 .padding(.leading, 24)
                 Spacer()
             }.padding(.top, 4)
         }
-        .background(RoundedCorners(color: .PBackground))
     }
 }
 
