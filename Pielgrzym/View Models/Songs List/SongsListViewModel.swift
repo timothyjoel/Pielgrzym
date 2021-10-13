@@ -10,7 +10,6 @@ import Combine
 
 class SongsListViewModel: ObservableObject {
     
-//    @ObservedObject var db = DatabaseManager()
     @Published var songs: [Song] = []
     @Published var state: State = .loading
     private var cancellable: AnyCancellable?

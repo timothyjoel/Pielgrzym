@@ -9,6 +9,16 @@
 /* Begin PBXBuildFile section */
 		E425F034270E4AF100568436 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E425F033270E4AF100568436 /* SearchBar.swift */; };
 		E425F036270E4C3300568436 /* Ext+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E425F035270E4C3300568436 /* Ext+Color.swift */; };
+		E425F03A2713882500568436 /* SongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E425F0392713882500568436 /* SongView.swift */; };
+		E425F03C2713884300568436 /* SongViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E425F03B2713884300568436 /* SongViewModel.swift */; };
+		E425F03E27138BAC00568436 /* RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = E425F03D27138BAC00568436 /* RoundedCorners.swift */; };
+		E425F04027141D0300568436 /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E425F03F27141D0300568436 /* Icon.swift */; };
+		E425F0422714207500568436 /* Ext+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E425F0412714207500568436 /* Ext+Image.swift */; };
+		E425F04427162EE200568436 /* Ext+UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E425F04327162EE200568436 /* Ext+UIScreen.swift */; };
+		E425F0472716B3FC00568436 /* SongSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E425F0462716B3FC00568436 /* SongSectionView.swift */; };
+		E425F0492716B43100568436 /* SongSectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E425F0482716B43100568436 /* SongSectionsView.swift */; };
+		E425F04B2716B46D00568436 /* SongAuthorSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E425F04A2716B46D00568436 /* SongAuthorSectionView.swift */; };
+		E425F04D2716D02A00568436 /* HideSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E425F04C2716D02A00568436 /* HideSeparator.swift */; };
 		E42DDEA2270D022200E0273E /* pielgrzym.json in Resources */ = {isa = PBXBuildFile; fileRef = E42DDEA1270D022200E0273E /* pielgrzym.json */; };
 		E42DDEA6270D027000E0273E /* SongSectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DDEA5270D027000E0273E /* SongSectionType.swift */; };
 		E42DDEA9270D034000E0273E /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DDEA8270D033F00E0273E /* Song.swift */; };
@@ -28,6 +38,16 @@
 /* Begin PBXFileReference section */
 		E425F033270E4AF100568436 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		E425F035270E4C3300568436 /* Ext+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+Color.swift"; sourceTree = "<group>"; };
+		E425F0392713882500568436 /* SongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongView.swift; sourceTree = "<group>"; };
+		E425F03B2713884300568436 /* SongViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongViewModel.swift; sourceTree = "<group>"; };
+		E425F03D27138BAC00568436 /* RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorners.swift; sourceTree = "<group>"; };
+		E425F03F27141D0300568436 /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
+		E425F0412714207500568436 /* Ext+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+Image.swift"; sourceTree = "<group>"; };
+		E425F04327162EE200568436 /* Ext+UIScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+UIScreen.swift"; sourceTree = "<group>"; };
+		E425F0462716B3FC00568436 /* SongSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongSectionView.swift; sourceTree = "<group>"; };
+		E425F0482716B43100568436 /* SongSectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongSectionsView.swift; sourceTree = "<group>"; };
+		E425F04A2716B46D00568436 /* SongAuthorSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongAuthorSectionView.swift; sourceTree = "<group>"; };
+		E425F04C2716D02A00568436 /* HideSeparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideSeparator.swift; sourceTree = "<group>"; };
 		E42DDEA1270D022200E0273E /* pielgrzym.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pielgrzym.json; sourceTree = SOURCE_ROOT; };
 		E42DDEA5270D027000E0273E /* SongSectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongSectionType.swift; sourceTree = "<group>"; };
 		E42DDEA8270D033F00E0273E /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
@@ -65,9 +85,37 @@
 			path = Subviews;
 			sourceTree = "<group>";
 		};
+		E425F0372713880800568436 /* Song */ = {
+			isa = PBXGroup;
+			children = (
+				E425F0392713882500568436 /* SongView.swift */,
+				E425F0452716B3E300568436 /* Subviews */,
+			);
+			path = Song;
+			sourceTree = "<group>";
+		};
+		E425F0382713881200568436 /* Song */ = {
+			isa = PBXGroup;
+			children = (
+				E425F03B2713884300568436 /* SongViewModel.swift */,
+			);
+			path = Song;
+			sourceTree = "<group>";
+		};
+		E425F0452716B3E300568436 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				E425F0482716B43100568436 /* SongSectionsView.swift */,
+				E425F0462716B3FC00568436 /* SongSectionView.swift */,
+				E425F04A2716B46D00568436 /* SongAuthorSectionView.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
 		E42DDE92270D012100E0273E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E425F0372713880800568436 /* Song */,
 				E42DDE9B270D019F00E0273E /* Liked Songs List */,
 				E42DDE93270D012700E0273E /* Songs List */,
 			);
@@ -86,6 +134,7 @@
 		E42DDE95270D013F00E0273E /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				E425F0382713881200568436 /* Song */,
 				E42DDE9C270D01AB00E0273E /* Liked Songs List */,
 				E42DDE9A270D018300E0273E /* Songs List */,
 			);
@@ -143,6 +192,8 @@
 			isa = PBXGroup;
 			children = (
 				E425F035270E4C3300568436 /* Ext+Color.swift */,
+				E425F04327162EE200568436 /* Ext+UIScreen.swift */,
+				E425F0412714207500568436 /* Ext+Image.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -160,6 +211,8 @@
 		E42DDEA3270D023200E0273E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E425F03D27138BAC00568436 /* RoundedCorners.swift */,
+				E425F04C2716D02A00568436 /* HideSeparator.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -167,6 +220,7 @@
 		E42DDEA4270D023800E0273E /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				E425F03F27141D0300568436 /* Icon.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -304,15 +358,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				E425F034270E4AF100568436 /* SearchBar.swift in Sources */,
+				E425F04027141D0300568436 /* Icon.swift in Sources */,
 				E42DDEA9270D034000E0273E /* Song.swift in Sources */,
 				E42DDEB2270D085000E0273E /* NavigationDismissStep.swift in Sources */,
+				E425F04427162EE200568436 /* Ext+UIScreen.swift in Sources */,
+				E425F03A2713882500568436 /* SongView.swift in Sources */,
+				E425F0422714207500568436 /* Ext+Image.swift in Sources */,
+				E425F0472716B3FC00568436 /* SongSectionView.swift in Sources */,
+				E425F04B2716B46D00568436 /* SongAuthorSectionView.swift in Sources */,
+				E425F03C2713884300568436 /* SongViewModel.swift in Sources */,
 				E425F036270E4C3300568436 /* Ext+Color.swift in Sources */,
 				E42DDEB4270D085000E0273E /* RootNavigationView.swift in Sources */,
 				E42DDEA6270D027000E0273E /* SongSectionType.swift in Sources */,
+				E425F0492716B43100568436 /* SongSectionsView.swift in Sources */,
 				E4FDF7772703C8560025D0CB /* SongsListView.swift in Sources */,
 				E42DDEB1270D085000E0273E /* NavigationStep.swift in Sources */,
 				E42DDEAB270D036700E0273E /* SongSection.swift in Sources */,
+				E425F04D2716D02A00568436 /* HideSeparator.swift in Sources */,
 				E42DDEB6270D08F900E0273E /* DatabaseManager.swift in Sources */,
+				E425F03E27138BAC00568436 /* RoundedCorners.swift in Sources */,
 				E4B61CFA270BB2BC001F9086 /* SongsListViewModel.swift in Sources */,
 				E42DDEB3270D085000E0273E /* UIKitNavigation.swift in Sources */,
 				E4FDF7752703C8560025D0CB /* PielgrzymApp.swift in Sources */,

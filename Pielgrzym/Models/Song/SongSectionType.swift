@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import SwiftUI
 
-enum SongSectionType: String, Decodable {
+public enum SongSectionType: String, Decodable {
     
     case V1, V2, V3, V4, V5, V6, V7, V8, V9, V10, C
     
@@ -39,6 +40,24 @@ enum SongSectionType: String, Decodable {
             return "Refren"
         }
         
+    }
+    
+    var icon: IconRepresentable {
+        switch self {
+        case .C:
+            return Icon.Song.chorus
+        default:
+            return Icon.Song.verse
+        }
+    }
+    
+    var iconColor: Color {
+        switch self {
+        case .C:
+            return .orange
+        default:
+            return .green
+        }
     }
     
 }

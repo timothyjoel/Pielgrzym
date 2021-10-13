@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Song: Decodable, Hashable {
+public struct Song: Decodable, Hashable {
     
     public var title: String
     public var author: String

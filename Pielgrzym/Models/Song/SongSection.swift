@@ -6,14 +6,31 @@
 //
 
 import Foundation
+import SwiftUI
 
-struct SongSection: Decodable, Hashable {
+public struct SongSection: Decodable, Hashable {
     
     private var title: String
     public var text: String
     
-    public var part: SongSectionType {
+    init(title: String, text: String) {
+        self.title = title
+        self.text = text
+    }
+    
+    public var type: SongSectionType {
         SongSectionType(rawValue: title)!
+    }
+    
+    public var part: String {
+        type.title
+    }
+    
+    public var icon: IconRepresentable {
+        type.icon
+    }
+    public var color: Color {
+        type.iconColor
     }
     
 }

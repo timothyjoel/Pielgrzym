@@ -33,28 +33,17 @@ struct SongsListView: View {
                         ForEach(self.vm.songs.enumerated().filter({ (offset, song) -> Bool in
                             searchEntry.isEmpty ? true : song.title.lowercased()
                                 .contains(searchEntry.lowercased())
-                        }), id: \.element) { index, song in
-                            
-                            HStack {
-                                Text("\(index+1).")
-                                Text(song.title)
+                        }), id: \.element) { num, song in
+                            let vm = SongViewModel(song: song, id: num+1)
+                            NavigationLink(destination: SongView(vm: vm)) {
+                                HStack {
+                                    Text("\(num+1).")
+                                    Text(song.title)
+                                }
                             }
-//                            NavigationLink(destination: SongView(song, self.db)) {
-//                                HStack {
-//                                    Text("\(song.number).")
-//                                    Text(song.title)
-//                                }
-//                            }
                         }
                     }
                     .listStyle(PlainListStyle())
-//                    .navigationBarItems(leading: NavigationLink(destination: LikedSongsView(db: db), label: {
-//                        Icon(image: .favorite, size: .medium, weight: .semibold, color: .mainColor)
-//                    }), trailing: Button(action: {
-//                        self.vm.fetchSongs()
-//                    }, label: {
-//                        Icon(image: .reload, size: .medium, weight: .semibold, color: .mainColor)
-//                    }))
                     .navigationBarTitle(Text(vm.title))
                 }
                 
