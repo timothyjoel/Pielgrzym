@@ -31,6 +31,7 @@
 		E42DDEB3270D085000E0273E /* UIKitNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DDEAF270D085000E0273E /* UIKitNavigation.swift */; };
 		E42DDEB4270D085000E0273E /* RootNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DDEB0270D085000E0273E /* RootNavigationView.swift */; };
 		E42DDEB6270D08F900E0273E /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DDEB5270D08F900E0273E /* DatabaseManager.swift */; };
+		E43C6E672728967800303544 /* SongListNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43C6E662728967700303544 /* SongListNavigation.swift */; };
 		E4B61CFA270BB2BC001F9086 /* SongsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B61CF9270BB2BC001F9086 /* SongsListViewModel.swift */; };
 		E4FDF7752703C8560025D0CB /* PielgrzymApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FDF7742703C8560025D0CB /* PielgrzymApp.swift */; };
 		E4FDF7772703C8560025D0CB /* SongsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FDF7762703C8560025D0CB /* SongsListView.swift */; };
@@ -63,6 +64,7 @@
 		E42DDEAF270D085000E0273E /* UIKitNavigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitNavigation.swift; sourceTree = "<group>"; };
 		E42DDEB0270D085000E0273E /* RootNavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNavigationView.swift; sourceTree = "<group>"; };
 		E42DDEB5270D08F900E0273E /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		E43C6E662728967700303544 /* SongListNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListNavigation.swift; sourceTree = "<group>"; };
 		E4B61CF9270BB2BC001F9086 /* SongsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsListViewModel.swift; sourceTree = "<group>"; };
 		E4FDF7712703C8560025D0CB /* Pielgrzym.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pielgrzym.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4FDF7742703C8560025D0CB /* PielgrzymApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PielgrzymApp.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				E4B61CF9270BB2BC001F9086 /* SongsListViewModel.swift */,
+				E43C6E662728967700303544 /* SongListNavigation.swift */,
 			);
 			path = "Songs List";
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				E425F0562716FA2700568436 /* SongSectionIcon.swift in Sources */,
 				E425F03C2713884300568436 /* SongViewModel.swift in Sources */,
 				E425F036270E4C3300568436 /* Ext+Color.swift in Sources */,
+				E43C6E672728967800303544 /* SongListNavigation.swift in Sources */,
 				E42DDEB4270D085000E0273E /* RootNavigationView.swift in Sources */,
 				E42DDEA6270D027000E0273E /* SongSectionType.swift in Sources */,
 				E425F0492716B43100568436 /* SongSectionsView.swift in Sources */,

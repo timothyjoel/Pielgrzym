@@ -10,6 +10,9 @@ import SwiftUI
 struct SongsListView: View {
     
     @ObservedObject var vm = SongsListViewModel()
+    @State var likedSongs: Bool = false
+    @State var about: Bool = false
+    @State var contact: Bool = false
     @State var searchEntry: String = ""
     
     var body: some View {
@@ -24,6 +27,18 @@ struct SongsListView: View {
                     .padding(.horizontal, 8)
                     SongsList(searchEntry: $searchEntry, songs: $vm.songs)
                 }
+                NavigationLink(
+                    destination: Text("Destination"),
+                    isActive: $likedSongs,
+                    label: { })
+                NavigationLink(
+                    destination: Text("Destination2"),
+                    isActive: $about,
+                    label: { })
+                NavigationLink(
+                    destination: Text("Destination3"),
+                    isActive: $contact,
+                    label: { })
             }
             .background(Color.background)
             .toolbar {
@@ -37,21 +52,8 @@ struct SongsListView: View {
                 }
                 
                 ToolbarItemGroup(placement: .navigationBarLeading) {
-                        Menu {
-                            MenuItem(type: .likedSongs, action: {
-                                print("open liked songs")
-                            })
-                            MenuItem(type: .about, action: {
-                                print("open about")
-                            })
-                            MenuItem(type: .contact, action: {
-                                print("open about")
-                            })
-                        }
-                        label: {
-                            NavigationIcon(image: .menu)
-                        }
-                    }
+                    SongsListMenu(vm: vm, likedSongs: $likedSongs, contact: $contact, about: $about)
+                }
             }
         }
     }
@@ -113,6 +115,34 @@ struct MenuItem: View {
     var body: some View {
         Button(action: action) {
             MenuListItemView(type: type)
+        }
+    }
+}
+
+struct SongsListMenu: View {
+    
+    @ObservedObject var vm: SongsListViewModel
+    @Binding var likedSongs: Bool
+    @Binding var contact: Bool
+    @Binding var about: Bool
+    
+    var body: some View {
+        Menu {
+            MenuItem(type: .likedSongs, action: {
+                print("open liked songs")
+                likedSongs.toggle()
+            })
+            MenuItem(type: .about, action: {
+                print("open about")
+                about.toggle()
+            })
+            MenuItem(type: .contact, action: {
+                print("open about")
+                contact.toggle()
+            })
+        }
+        label: {
+            NavigationIcon(image: .menu)
         }
     }
 }
