@@ -17,6 +17,7 @@ struct SectionsView: View {
                 .hideRowSeparator()
                 .padding(.horizontal, 16)
         }
+        .padding(.top, 16)
     }
     
 }

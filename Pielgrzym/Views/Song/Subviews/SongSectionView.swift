@@ -26,7 +26,7 @@ struct SectionView: View {
                 RoundedRectangle(cornerRadius: 8)
                     .stroke(Color.label, lineWidth: 1.5))
             .padding(.top, 16)
-            .padding(.bottom, 8)
+            .padding(.bottom, 16)
             VStack {
                 HStack {
                     HStack(spacing: 4) {

@@ -62,7 +62,7 @@ extension  SongsListViewModel {
     }
 
     public struct URLPath {
-        static let pielgrzym: String = "https://raw.githubusercontent.com/timothyjoel/Pielgrzym/main/pielgrzym.json"
+        static let pielgrzym: String = "https://raw.githubusercontent.com/timothyjoel/Pielgrzym/main/pielgrzym2.json"
     }
 
     public enum LoadingError: LocalizedError {

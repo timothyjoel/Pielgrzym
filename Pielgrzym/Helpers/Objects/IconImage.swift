@@ -26,6 +26,8 @@ extension IconImage {
         case share
         case reload
         case menu
+        case info
+        case contact
         
         public var name: String {
             switch self {
@@ -36,7 +38,11 @@ extension IconImage {
             case .share:
                 return "square.and.arrow.up"
             case .menu:
-                return "line.3.horizontal"
+                return "list.dash"
+            case .info:
+                return "info"
+            case .contact:
+                return "message"
             }
         }
     }

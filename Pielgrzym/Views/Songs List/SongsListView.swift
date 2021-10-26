@@ -37,13 +37,21 @@ struct SongsListView: View {
                 }
                 
                 ToolbarItemGroup(placement: .navigationBarLeading) {
-                    Button(action: {
-                        print("menu tapped")
-                    }, label: {
-                        NavigationIcon(image: .reload)
-                    })
-                }
-                
+                        Menu {
+                            MenuItem(type: .likedSongs, action: {
+                                print("open liked songs")
+                            })
+                            MenuItem(type: .about, action: {
+                                print("open about")
+                            })
+                            MenuItem(type: .contact, action: {
+                                print("open about")
+                            })
+                        }
+                        label: {
+                            NavigationIcon(image: .menu)
+                        }
+                    }
             }
         }
     }
@@ -52,5 +60,59 @@ struct SongsListView: View {
 struct SongsListView_Previews: PreviewProvider {
     static var previews: some View {
         SongsListView()
+    }
+}
+
+public enum SongListMenuType {
+    
+    case likedSongs
+    case about
+    case contact
+    
+    public var title: String {
+        switch self {
+        case .about:
+            return "O aplikacji"
+        case .contact:
+            return "Kontakt"
+        case .likedSongs:
+            return "Polubione pieśni"
+        }
+    }
+    
+    public var icon: IconImage.Navigation {
+        switch self {
+        case .about:
+            return .info
+        case .contact:
+            return .contact
+        case .likedSongs:
+            return .heart
+        }
+    }
+    
+}
+
+struct MenuListItemView: View {
+    
+    var type: SongListMenuType
+    
+    var body: some View {
+        HStack {
+            Text(type.title)
+            NavigationIcon(image: type.icon)
+        }
+    }
+}
+
+struct MenuItem: View {
+    
+    var type: SongListMenuType
+    var action: () -> Void
+    
+    var body: some View {
+        Button(action: action) {
+            MenuListItemView(type: type)
+        }
     }
 }
