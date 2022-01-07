@@ -20,12 +20,12 @@ public final class SongViewModel: ObservableObject {
     @Published public var isLiked: Bool
     
     
-    public init(song: Song, id: Int) {
-        self.id = id
+    public init(song: Song) {
+        self.id = song.id
         self.title = "\(song.title)"
         self.author = song.author == "" ? "Nieznany" : "\(song.author)"
         self.sections = song.sections
-        self.isLiked = db.isLiked(song: id)
+        self.isLiked = db.isLiked(song: song.id)
     }
     
     public func tapHeart() {
@@ -35,6 +35,7 @@ public final class SongViewModel: ObservableObject {
     private func like() {
         isLiked.toggle()
         db.like(song: id)
+        print("like id:\(id)")
     }
     
     private func unLike() {

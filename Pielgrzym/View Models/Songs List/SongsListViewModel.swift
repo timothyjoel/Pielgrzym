@@ -36,7 +36,7 @@ class SongsListViewModel: ObservableObject {
                 return output.data
         }
         .receive(on: RunLoop.main)
-        .decode(type: [Song].self, decoder: JSONDecoder())
+        .decode(type: [SongRaw].self, decoder: JSONDecoder())
         .replaceError(with: [])
         .eraseToAnyPublisher()
         .sink(receiveCompletion: { completion in
@@ -47,7 +47,7 @@ class SongsListViewModel: ObservableObject {
                 fatalError(error.localizedDescription)
             }
         }, receiveValue: { songs in
-            self.songs = songs
+            self.songs = songs.enumerated().map( { Song(title: $0.element.title, author: $0.element.author, id: $0.offset+1, sections: $0.element.sections)})
             self.state = .success
         })
     }

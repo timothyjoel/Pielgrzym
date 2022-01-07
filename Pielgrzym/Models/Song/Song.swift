@@ -7,10 +7,19 @@
 
 import Foundation
 
-public struct Song: Decodable, Hashable {
+public struct SongRaw: Decodable, Hashable {
     
     public var title: String
     public var author: String
+    public var sections: [SongSection]
+    
+}
+
+public struct Song: Hashable {
+    
+    public var title: String
+    public var author: String
+    public var id: Int
     public var sections: [SongSection]
     
 }

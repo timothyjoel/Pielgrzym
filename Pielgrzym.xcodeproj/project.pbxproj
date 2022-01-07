@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,6 +23,12 @@
 		E425F0532716DC8700568436 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E425F0522716DC8700568436 /* LoaderView.swift */; };
 		E425F0562716FA2700568436 /* SongSectionIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E425F0552716FA2700568436 /* SongSectionIcon.swift */; };
 		E425F0582716FA4100568436 /* NavigationIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E425F0572716FA4100568436 /* NavigationIcon.swift */; };
+		E42B800B2788F001000DB881 /* LikedSongsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42B800A2788F001000DB881 /* LikedSongsListView.swift */; };
+		E42B800D2788F038000DB881 /* LikedSongsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42B800C2788F038000DB881 /* LikedSongsListViewModel.swift */; };
+		E42B80102788F377000DB881 /* LikedSongsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42B800F2788F377000DB881 /* LikedSongsList.swift */; };
+		E42B801E2788FA89000DB881 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E42B801D2788FA89000DB881 /* RxSwift */; };
+		E42B80202788FA89000DB881 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = E42B801F2788FA89000DB881 /* RxCocoa */; };
+		E42B80222788FA89000DB881 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = E42B80212788FA89000DB881 /* RxRelay */; };
 		E42DDEA6270D027000E0273E /* SongSectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DDEA5270D027000E0273E /* SongSectionType.swift */; };
 		E42DDEA9270D034000E0273E /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DDEA8270D033F00E0273E /* Song.swift */; };
 		E42DDEAB270D036700E0273E /* SongSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DDEAA270D036700E0273E /* SongSection.swift */; };
@@ -56,6 +62,9 @@
 		E425F0522716DC8700568436 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		E425F0552716FA2700568436 /* SongSectionIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongSectionIcon.swift; sourceTree = "<group>"; };
 		E425F0572716FA4100568436 /* NavigationIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationIcon.swift; sourceTree = "<group>"; };
+		E42B800A2788F001000DB881 /* LikedSongsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedSongsListView.swift; sourceTree = "<group>"; };
+		E42B800C2788F038000DB881 /* LikedSongsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedSongsListViewModel.swift; sourceTree = "<group>"; };
+		E42B800F2788F377000DB881 /* LikedSongsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedSongsList.swift; sourceTree = "<group>"; };
 		E42DDEA5270D027000E0273E /* SongSectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongSectionType.swift; sourceTree = "<group>"; };
 		E42DDEA8270D033F00E0273E /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		E42DDEAA270D036700E0273E /* SongSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongSection.swift; sourceTree = "<group>"; };
@@ -79,6 +88,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E42B80222788FA89000DB881 /* RxRelay in Frameworks */,
+				E42B80202788FA89000DB881 /* RxCocoa in Frameworks */,
+				E42B801E2788FA89000DB881 /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +143,14 @@
 			path = Icons;
 			sourceTree = "<group>";
 		};
+		E42B800E2788F368000DB881 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				E42B800F2788F377000DB881 /* LikedSongsList.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
 		E42DDE92270D012100E0273E /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +200,8 @@
 		E42DDE9B270D019F00E0273E /* Liked Songs List */ = {
 			isa = PBXGroup;
 			children = (
+				E42B800A2788F001000DB881 /* LikedSongsListView.swift */,
+				E42B800E2788F368000DB881 /* Subviews */,
 			);
 			path = "Liked Songs List";
 			sourceTree = "<group>";
@@ -187,6 +209,7 @@
 		E42DDE9C270D01AB00E0273E /* Liked Songs List */ = {
 			isa = PBXGroup;
 			children = (
+				E42B800C2788F038000DB881 /* LikedSongsListViewModel.swift */,
 			);
 			path = "Liked Songs List";
 			sourceTree = "<group>";
@@ -323,6 +346,11 @@
 			dependencies = (
 			);
 			name = Pielgrzym;
+			packageProductDependencies = (
+				E42B801D2788FA89000DB881 /* RxSwift */,
+				E42B801F2788FA89000DB881 /* RxCocoa */,
+				E42B80212788FA89000DB881 /* RxRelay */,
+			);
 			productName = Pielgrzym;
 			productReference = E4FDF7712703C8560025D0CB /* Pielgrzym.app */;
 			productType = "com.apple.product-type.application";
@@ -350,6 +378,9 @@
 				Base,
 			);
 			mainGroup = E4FDF7682703C8560025D0CB;
+			packageReferences = (
+				E42B801C2788FA89000DB881 /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = E4FDF7722703C8560025D0CB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -382,6 +413,8 @@
 				E425F0532716DC8700568436 /* LoaderView.swift in Sources */,
 				E42DDEB2270D085000E0273E /* NavigationDismissStep.swift in Sources */,
 				E425F04F2716D64D00568436 /* Ext+Font.swift in Sources */,
+				E42B80102788F377000DB881 /* LikedSongsList.swift in Sources */,
+				E42B800B2788F001000DB881 /* LikedSongsListView.swift in Sources */,
 				E425F04427162EE200568436 /* Ext+UIScreen.swift in Sources */,
 				E425F03A2713882500568436 /* SongView.swift in Sources */,
 				E425F0472716B3FC00568436 /* SongSectionView.swift in Sources */,
@@ -402,6 +435,7 @@
 				E425F03E27138BAC00568436 /* RoundedCorners.swift in Sources */,
 				E425F0582716FA4100568436 /* NavigationIcon.swift in Sources */,
 				E4B61CFA270BB2BC001F9086 /* SongsListViewModel.swift in Sources */,
+				E42B800D2788F038000DB881 /* LikedSongsListViewModel.swift in Sources */,
 				E42DDEB3270D085000E0273E /* UIKitNavigation.swift in Sources */,
 				E4FDF7752703C8560025D0CB /* PielgrzymApp.swift in Sources */,
 			);
@@ -592,6 +626,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E42B801C2788FA89000DB881 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E42B801D2788FA89000DB881 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E42B801C2788FA89000DB881 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		E42B801F2788FA89000DB881 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E42B801C2788FA89000DB881 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		E42B80212788FA89000DB881 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E42B801C2788FA89000DB881 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E4FDF7692703C8560025D0CB /* Project object */;
 }

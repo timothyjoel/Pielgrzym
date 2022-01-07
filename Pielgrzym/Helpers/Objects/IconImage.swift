@@ -28,6 +28,7 @@ extension IconImage {
         case menu
         case info
         case contact
+        case trash
         
         public enum Heart {
             case empty
@@ -53,6 +54,8 @@ extension IconImage {
                 return "info"
             case .contact:
                 return "message"
+            case .trash:
+                return "trash.fill"
             }
         }
     }

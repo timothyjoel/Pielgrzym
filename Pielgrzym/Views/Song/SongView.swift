@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SongView: View {
     
+    @Environment(\.presentationMode) var presentationMode
     @ObservedObject var vm: SongViewModel
     
     var body: some View {
@@ -30,6 +31,13 @@ struct SongView: View {
                         NavigationIcon(image: .heart(vm.isLiked ? .filled : .empty), color: .main)
                     })
                 }
+                ToolbarItemGroup(placement: .navigationBarLeading) {
+                    Button(action: {
+                        
+                    }, label: {
+                        EmptyView()
+                    })
+                }
             }
         }
     }
@@ -39,7 +47,7 @@ struct SongView: View {
 
 struct SongView_Previews: PreviewProvider {
     static var previews: some View {
-        SongView(vm: SongViewModel(song: Song(title: "Title1", author: "Lukasz Skotnicki", sections: [SongSection(title: "V1", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.")]), id: 5))
+        SongView(vm: SongViewModel(song: Song(title: "Title1", author: "Lukasz Skotnicki", id: 5, sections: [SongSection(title: "V1", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.")])))
     }
 }
 

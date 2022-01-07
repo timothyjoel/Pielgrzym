@@ -28,7 +28,7 @@ struct SongsListView: View {
                     SongsList(searchEntry: $searchEntry, songs: $vm.songs)
                 }
                 NavigationLink(
-                    destination: Text("Destination"),
+                    destination: LikedSongsListView(vm: LikedSongsListViewModel(allSongs: vm.songs)),
                     isActive: $likedSongs,
                     label: { })
                 NavigationLink(

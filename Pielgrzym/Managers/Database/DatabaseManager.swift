@@ -6,28 +6,29 @@
 //
 
 import SwiftUI
-import Combine
+import RxSwift
+import RxCocoa
 
 class DatabaseManager {
+    
+    var likedSongsRelay: BehaviorRelay<[Int]>
     
     static let shared = DatabaseManager()
 
     // MARK: - Initializers
 
-    private init() { }
+    private init() {
+        self.likedSongsRelay = BehaviorRelay(value: UserDefaults.standard.array(forKey: "LikedSongs") as? [Int] ?? [])
+    }
 
 }
 
-// MARK: - Private getters
+// MARK: - Public getters
 
 extension DatabaseManager {
     
-    private var likedSongs: [Int] {
-        UserDefaults.standard.array(forKey: likedSongsKey) as? [Int] ?? []
-    }
-    
-    private var likedSongsKey: String {
-        "LikedSongs"
+    public var likedSongs: Observable<[Int]> {
+        likedSongsRelay.asObservable()
     }
     
 }
@@ -37,19 +38,18 @@ extension DatabaseManager {
 extension DatabaseManager {
     
     public func like(song id: Int) {
-        var songs = self.likedSongs
+        var songs = self.likedSongsRelay.value
         songs.append(id)
         setLiked(songs)
     }
 
     public func unlike(song id: Int) {
-        let songs = self.likedSongs.filter( { $0 != id })
+        let songs = self.likedSongsRelay.value.filter( { $0 != id })
         setLiked(songs)
     }
 
     public func isLiked(song id: Int) -> Bool {
-        let likedSongs = UserDefaults.standard.array(forKey: likedSongsKey) as? [Int] ?? []
-        return likedSongs.contains(id)
+        return likedSongsRelay.value.contains(id)
     }
     
 }
@@ -58,8 +58,10 @@ extension DatabaseManager {
 
 extension DatabaseManager {
     
-    private func setLiked(_ ids: [Int]) {
-        UserDefaults.standard.setValue(ids, forKeyPath: likedSongsKey)
+    private func setLiked(_ songs: [Int]) {
+        let songs = songs.sorted(by: { $1 > $0 })
+        likedSongsRelay.accept(songs)
+        UserDefaults.standard.setValue(songs, forKeyPath: "LikedSongs")
     }
     
 }

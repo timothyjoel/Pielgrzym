@@ -1,24 +1,24 @@
 //
-//  SongsListSubview.swift
+//  LikedSongsList.swift
 //  Pielgrzym
 //
-//  Created by Tymoteusz Stokarski on 13/10/2021.
+//  Created by Tymoteusz Stokarski on 07/01/2022.
 //
 
+import Foundation
 import SwiftUI
 
-struct SongsList: View {
+struct LikedSongsList: View {
     
-    @Binding var searchEntry: String
     @Binding var songs: [Song]
     
     var body: some View {
         List {
             ForEach(self.songs.enumerated().filter({ (offset, song) -> Bool in
-                searchEntry.isEmpty ? true : song.title.lowercased()
-                    .contains(searchEntry.lowercased())
+                return true
             }), id: \.element) { num, song in
-                NavigationLink(destination: SongView(vm: SongViewModel(song: song))) {
+                let vm = SongViewModel(song: song)
+                NavigationLink(destination: SongView(vm: vm)) {
                     HStack {
                         Text("\(song.id).")
                             .font(.text)
