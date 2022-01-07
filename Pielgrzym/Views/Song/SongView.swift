@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SongView: View {
     
-    var vm: SongViewModel
+    @ObservedObject var vm: SongViewModel
     
     var body: some View {
         
@@ -22,6 +22,15 @@ struct SongView: View {
             .listStyle(PlainListStyle())
             .navigationBarTitle("")
             .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        vm.tapHeart()
+                    }, label: {
+                        NavigationIcon(image: .heart(vm.isLiked ? .filled : .empty), color: .main)
+                    })
+                }
+            }
         }
     }
 }

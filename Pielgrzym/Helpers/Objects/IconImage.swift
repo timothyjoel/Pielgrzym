@@ -21,18 +21,28 @@ public enum IconImage {
 extension IconImage {
     
     public enum Navigation: IconRepresentable {
-        
-        case heart
+                
+        case heart(Heart)
         case share
         case reload
         case menu
         case info
         case contact
         
+        public enum Heart {
+            case empty
+            case filled
+        }
+        
         public var name: String {
             switch self {
-            case .heart:
-                return "heart.fill"
+            case .heart(let heart):
+                switch heart {
+                case .empty:
+                    return "heart"
+                case .filled:
+                    return "heart.fill"
+                }
             case .reload:
                 return "arrow.clockwise"
             case .share:

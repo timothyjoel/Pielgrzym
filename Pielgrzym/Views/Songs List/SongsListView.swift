@@ -89,7 +89,7 @@ public enum SongListMenuType {
         case .contact:
             return .contact
         case .likedSongs:
-            return .heart
+            return .heart(.filled)
         }
     }
     

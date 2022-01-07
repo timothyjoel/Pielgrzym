@@ -8,44 +8,58 @@
 import SwiftUI
 import Combine
 
-//class DatabaseManager: ObservableObject {
-//
-//    @Published var songs: [Song] = []
-//    @Published var likedSongs: [Song] = []
-//    @Published var state: State = .loading
-//
-//    private var cancellable: AnyCancellable?
-//
-//    // MARK: - Methods
-//
-//    init() {
-//        loadSongs()
-//    }
-//
-//
-//
-//    private func loadLikedSongs() {
-//
-//    }
-//
-//    private func like(_ song: Song) {
-//        likedSongs.append(song)
-//    }
-//
-//    private func unlike(_ song: Song) {
-//        guard let index = likedSongs.firstIndex(where: { $0.title == song.title }) else { return }
-//        likedSongs.remove(at: index)
-//    }
-//
-//    func fetchSongs() {
-//
-//    }
-//
-//
-//}
-//
-//extension DatabaseManager {
-//
-//
-//
-//}
+class DatabaseManager {
+    
+    static let shared = DatabaseManager()
+
+    // MARK: - Initializers
+
+    private init() { }
+
+}
+
+// MARK: - Private getters
+
+extension DatabaseManager {
+    
+    private var likedSongs: [Int] {
+        UserDefaults.standard.array(forKey: likedSongsKey) as? [Int] ?? []
+    }
+    
+    private var likedSongsKey: String {
+        "LikedSongs"
+    }
+    
+}
+
+// MARK: - Public methods
+
+extension DatabaseManager {
+    
+    public func like(song id: Int) {
+        var songs = self.likedSongs
+        songs.append(id)
+        setLiked(songs)
+    }
+
+    public func unlike(song id: Int) {
+        let songs = self.likedSongs.filter( { $0 != id })
+        setLiked(songs)
+    }
+
+    public func isLiked(song id: Int) -> Bool {
+        let likedSongs = UserDefaults.standard.array(forKey: likedSongsKey) as? [Int] ?? []
+        return likedSongs.contains(id)
+    }
+    
+}
+
+// MARK: - Private methods
+
+extension DatabaseManager {
+    
+    private func setLiked(_ ids: [Int]) {
+        UserDefaults.standard.setValue(ids, forKeyPath: likedSongsKey)
+    }
+    
+}

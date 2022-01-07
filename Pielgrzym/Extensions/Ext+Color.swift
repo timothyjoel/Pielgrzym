@@ -11,5 +11,6 @@ extension Color {
     
     static var background = Color(UIColor.systemBackground)
     static var label = Color(UIColor.label)
+    static var main = Color(UIColor.systemGreen)
     
 }

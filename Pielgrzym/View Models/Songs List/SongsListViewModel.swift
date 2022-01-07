@@ -48,7 +48,6 @@ class SongsListViewModel: ObservableObject {
             }
         }, receiveValue: { songs in
             self.songs = songs
-            print(songs.count)
             self.state = .success
         })
     }
