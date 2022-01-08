@@ -52,6 +52,10 @@ extension DatabaseManager {
         return likedSongsRelay.value.contains(id)
     }
     
+    public func removeLikedSongs() {
+        setLiked([])
+    }
+    
 }
 
 // MARK: - Private methods

@@ -29,6 +29,10 @@
 		E42B801E2788FA89000DB881 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E42B801D2788FA89000DB881 /* RxSwift */; };
 		E42B80202788FA89000DB881 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = E42B801F2788FA89000DB881 /* RxCocoa */; };
 		E42B80222788FA89000DB881 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = E42B80212788FA89000DB881 /* RxRelay */; };
+		E42B802527890981000DB881 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42B802427890981000DB881 /* AboutView.swift */; };
+		E42B802827890A12000DB881 /* AboutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42B802727890A12000DB881 /* AboutViewModel.swift */; };
+		E42B802B2789124F000DB881 /* SingleActionPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42B802A2789124F000DB881 /* SingleActionPopup.swift */; };
+		E42B802D27891573000DB881 /* SingleAcctionPopupType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42B802C27891573000DB881 /* SingleAcctionPopupType.swift */; };
 		E42DDEA6270D027000E0273E /* SongSectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DDEA5270D027000E0273E /* SongSectionType.swift */; };
 		E42DDEA9270D034000E0273E /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DDEA8270D033F00E0273E /* Song.swift */; };
 		E42DDEAB270D036700E0273E /* SongSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DDEAA270D036700E0273E /* SongSection.swift */; };
@@ -65,6 +69,10 @@
 		E42B800A2788F001000DB881 /* LikedSongsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedSongsListView.swift; sourceTree = "<group>"; };
 		E42B800C2788F038000DB881 /* LikedSongsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedSongsListViewModel.swift; sourceTree = "<group>"; };
 		E42B800F2788F377000DB881 /* LikedSongsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedSongsList.swift; sourceTree = "<group>"; };
+		E42B802427890981000DB881 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		E42B802727890A12000DB881 /* AboutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewModel.swift; sourceTree = "<group>"; };
+		E42B802A2789124F000DB881 /* SingleActionPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleActionPopup.swift; sourceTree = "<group>"; };
+		E42B802C27891573000DB881 /* SingleAcctionPopupType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleAcctionPopupType.swift; sourceTree = "<group>"; };
 		E42DDEA5270D027000E0273E /* SongSectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongSectionType.swift; sourceTree = "<group>"; };
 		E42DDEA8270D033F00E0273E /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		E42DDEAA270D036700E0273E /* SongSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongSection.swift; sourceTree = "<group>"; };
@@ -151,9 +159,36 @@
 			path = Subviews;
 			sourceTree = "<group>";
 		};
+		E42B802327890972000DB881 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				E42B802427890981000DB881 /* AboutView.swift */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		E42B802627890A03000DB881 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				E42B802727890A12000DB881 /* AboutViewModel.swift */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		E42B802927891241000DB881 /* Popups */ = {
+			isa = PBXGroup;
+			children = (
+				E42B802A2789124F000DB881 /* SingleActionPopup.swift */,
+				E42B802C27891573000DB881 /* SingleAcctionPopupType.swift */,
+			);
+			path = Popups;
+			sourceTree = "<group>";
+		};
 		E42DDE92270D012100E0273E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E42B802927891241000DB881 /* Popups */,
+				E42B802327890972000DB881 /* About */,
 				E425F0372713880800568436 /* Song */,
 				E42DDE9B270D019F00E0273E /* Liked Songs List */,
 				E42DDE93270D012700E0273E /* Songs List */,
@@ -173,6 +208,7 @@
 		E42DDE95270D013F00E0273E /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				E42B802627890A03000DB881 /* About */,
 				E425F0382713881200568436 /* Song */,
 				E42DDE9C270D01AB00E0273E /* Liked Songs List */,
 				E42DDE9A270D018300E0273E /* Songs List */,
@@ -407,6 +443,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E42B802527890981000DB881 /* AboutView.swift in Sources */,
 				E425F034270E4AF100568436 /* SearchBar.swift in Sources */,
 				E425F04027141D0300568436 /* IconImage.swift in Sources */,
 				E42DDEA9270D034000E0273E /* Song.swift in Sources */,
@@ -414,6 +451,8 @@
 				E42DDEB2270D085000E0273E /* NavigationDismissStep.swift in Sources */,
 				E425F04F2716D64D00568436 /* Ext+Font.swift in Sources */,
 				E42B80102788F377000DB881 /* LikedSongsList.swift in Sources */,
+				E42B802D27891573000DB881 /* SingleAcctionPopupType.swift in Sources */,
+				E42B802B2789124F000DB881 /* SingleActionPopup.swift in Sources */,
 				E42B800B2788F001000DB881 /* LikedSongsListView.swift in Sources */,
 				E425F04427162EE200568436 /* Ext+UIScreen.swift in Sources */,
 				E425F03A2713882500568436 /* SongView.swift in Sources */,
@@ -429,6 +468,7 @@
 				E4FDF7772703C8560025D0CB /* SongsListView.swift in Sources */,
 				E42DDEB1270D085000E0273E /* NavigationStep.swift in Sources */,
 				E42DDEAB270D036700E0273E /* SongSection.swift in Sources */,
+				E42B802827890A12000DB881 /* AboutViewModel.swift in Sources */,
 				E425F04D2716D02A00568436 /* HideSeparator.swift in Sources */,
 				E42DDEB6270D08F900E0273E /* DatabaseManager.swift in Sources */,
 				E425F0512716DC6300568436 /* SongsListSubview.swift in Sources */,

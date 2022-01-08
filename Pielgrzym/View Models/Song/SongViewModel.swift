@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import RxSwift
 
 public final class SongViewModel: ObservableObject {
     
@@ -17,15 +18,15 @@ public final class SongViewModel: ObservableObject {
     
     private var db = DatabaseManager.shared
     
-    @Published public var isLiked: Bool
-    
+    @Published public var isLiked: Bool = false
+    private let disposeBag = DisposeBag()
     
     public init(song: Song) {
         self.id = song.id
         self.title = "\(song.title)"
         self.author = song.author == "" ? "Nieznany" : "\(song.author)"
         self.sections = song.sections
-        self.isLiked = db.isLiked(song: song.id)
+        observeLikeState()
     }
     
     public func tapHeart() {
@@ -41,6 +42,13 @@ public final class SongViewModel: ObservableObject {
     private func unLike() {
         isLiked.toggle()
         db.unlike(song: id)
+    }
+    
+    private func observeLikeState() {
+        db.likedSongs.subscribe(onNext: { [weak self] songs in
+            guard let self = self else { return }
+            self.isLiked = songs.contains(self.id)
+        }).disposed(by: disposeBag)
     }
     
 }

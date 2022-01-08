@@ -12,6 +12,7 @@ struct LikedSongsList: View {
     
     @Binding var songs: [Song]
     
+    
     var body: some View {
         List {
             ForEach(self.songs.enumerated().filter({ (offset, song) -> Bool in

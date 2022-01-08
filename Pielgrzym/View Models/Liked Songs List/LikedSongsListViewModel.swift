@@ -34,4 +34,8 @@ public final class LikedSongsListViewModel: ObservableObject {
         }).disposed(by: disposeBag)
     }
     
+    public func removeLikedSongs() {
+        db.removeLikedSongs()
+    }
+    
 }

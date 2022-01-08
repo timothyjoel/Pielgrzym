@@ -1,13 +1,13 @@
 //
-//  SongView.swift
+//  AboutView.swift
 //  Pielgrzym
 //
-//  Created by Tymoteusz Stokarski on 10/10/2021.
+//  Created by Tymoteusz Stokarski on 08/01/2022.
 //
 
 import SwiftUI
 
-struct SongView: View {
+struct AboutView: View {
     
     @ObservedObject var vm: SongViewModel
     
@@ -44,22 +44,8 @@ struct SongView: View {
 
 
 
-struct SongView_Previews: PreviewProvider {
+struct AboutView_Previews: PreviewProvider {
     static var previews: some View {
         SongView(vm: SongViewModel(song: Song(title: "Title1", author: "Lukasz Skotnicki", id: 5, sections: [SongSection(title: "V1", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.")])))
-    }
-}
-
-struct NavigationTitleView: View {
-    
-    var title: String
-    
-    var body: some View {
-        HStack {
-            Text(title)
-                .font(.system(size: 30, weight: .semibold, design: .rounded))
-                .foregroundColor(.label)
-            Spacer()
-        }.padding(.horizontal)
     }
 }

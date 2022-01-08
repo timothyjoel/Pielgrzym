@@ -15,6 +15,8 @@ struct SongsListView: View {
     @State var contact: Bool = false
     @State var searchEntry: String = ""
     
+    @State var setBlur: Bool = false
+    
     var body: some View {
         NavigationView {
             VStack(spacing: 8) {
