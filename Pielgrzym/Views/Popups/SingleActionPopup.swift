@@ -55,7 +55,7 @@ struct SingleActionPopup: View {
             }
             .frame(width: UIScreen.width*2/3, alignment: .center)
             .background(RoundedCorners(color: .background, tl: 16, tr: 16, bl: 16, br: 16))
-            .shadow(radius: 20)
+            .shadow(color: .label.opacity(0.4), radius: 6, x: 0, y: 0)
             Spacer()
         }
     }

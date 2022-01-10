@@ -9,35 +9,22 @@ import SwiftUI
 
 struct AboutView: View {
     
-    @ObservedObject var vm: SongViewModel
+    var vm = AboutViewModel()
     
     var body: some View {
         
-        VStack(spacing: 8) {
-            NavigationTitleView(title: vm.title)
-            List {
-                AuthorHeader(author: vm.author)
-                SectionsView(sections: vm.sections)
-            }
+        VStack(alignment: .leading, spacing: 4) {
+            NavigationTitleView(title: vm.section1Title)
+            Text(vm.section1Text)
+                .padding()
+            Text(vm.section2Title)
+                .font(.system(size: 30, weight: .semibold, design: .rounded))
+                .padding(.horizontal)
+            WedrowiecAppSectionView(vm: vm)
+            Spacer()
             .listStyle(PlainListStyle())
             .navigationBarTitle("")
             .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItemGroup(placement: .navigationBarTrailing) {
-                    Button(action: {
-                        vm.tapHeart()
-                    }, label: {
-                        NavigationIcon(image: .heart(vm.isLiked ? .filled : .empty), color: .main)
-                    })
-                }
-                ToolbarItemGroup(placement: .navigationBarLeading) {
-                    Button(action: {
-                        
-                    }, label: {
-                        EmptyView()
-                    })
-                }
-            }
         }
     }
 }
@@ -46,6 +33,34 @@ struct AboutView: View {
 
 struct AboutView_Previews: PreviewProvider {
     static var previews: some View {
-        SongView(vm: SongViewModel(song: Song(title: "Title1", author: "Lukasz Skotnicki", id: 5, sections: [SongSection(title: "V1", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.")])))
+        AboutView()
+    }
+}
+
+struct WedrowiecAppSectionView: View {
+    
+    var vm: AboutViewModel
+    
+    var body: some View {
+        HStack(spacing: 20) {
+            Image("wedrowiec")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 70, height: 70, alignment: .center)
+                .cornerRadius(15)
+                .padding()
+            VStack(alignment: .leading) {
+                Text("Śpiewnik Wędrowca")
+                    .font(.system(size: 20, weight: .semibold, design: .rounded))
+                    .foregroundColor(.label)
+                Text("Zobacz w AppStore")
+                    .foregroundColor(.main)
+                    .font(.system(size: 20, weight: .semibold, design: .rounded))
+                    .onTapGesture {
+                        vm.openWedrowiecAppInAppstore()
+                    }
+            }
+            Spacer()
+        }
     }
 }

@@ -33,6 +33,10 @@
 		E42B802827890A12000DB881 /* AboutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42B802727890A12000DB881 /* AboutViewModel.swift */; };
 		E42B802B2789124F000DB881 /* SingleActionPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42B802A2789124F000DB881 /* SingleActionPopup.swift */; };
 		E42B802D27891573000DB881 /* SingleAcctionPopupType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42B802C27891573000DB881 /* SingleAcctionPopupType.swift */; };
+		E42B803027898086000DB881 /* HourGlassLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42B802F27898086000DB881 /* HourGlassLoaderView.swift */; };
+		E42B8033278980B5000DB881 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = E42B8032278980B5000DB881 /* Lottie */; };
+		E42B8035278980DD000DB881 /* LottieAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42B8034278980DD000DB881 /* LottieAnimation.swift */; };
+		E42B8037278980FF000DB881 /* Hourglass.json in Resources */ = {isa = PBXBuildFile; fileRef = E42B8036278980FF000DB881 /* Hourglass.json */; };
 		E42DDEA6270D027000E0273E /* SongSectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DDEA5270D027000E0273E /* SongSectionType.swift */; };
 		E42DDEA9270D034000E0273E /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DDEA8270D033F00E0273E /* Song.swift */; };
 		E42DDEAB270D036700E0273E /* SongSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DDEAA270D036700E0273E /* SongSection.swift */; };
@@ -73,6 +77,9 @@
 		E42B802727890A12000DB881 /* AboutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewModel.swift; sourceTree = "<group>"; };
 		E42B802A2789124F000DB881 /* SingleActionPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleActionPopup.swift; sourceTree = "<group>"; };
 		E42B802C27891573000DB881 /* SingleAcctionPopupType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleAcctionPopupType.swift; sourceTree = "<group>"; };
+		E42B802F27898086000DB881 /* HourGlassLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourGlassLoaderView.swift; sourceTree = "<group>"; };
+		E42B8034278980DD000DB881 /* LottieAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieAnimation.swift; sourceTree = "<group>"; };
+		E42B8036278980FF000DB881 /* Hourglass.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Hourglass.json; sourceTree = "<group>"; };
 		E42DDEA5270D027000E0273E /* SongSectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongSectionType.swift; sourceTree = "<group>"; };
 		E42DDEA8270D033F00E0273E /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		E42DDEAA270D036700E0273E /* SongSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongSection.swift; sourceTree = "<group>"; };
@@ -99,6 +106,7 @@
 				E42B80222788FA89000DB881 /* RxRelay in Frameworks */,
 				E42B80202788FA89000DB881 /* RxCocoa in Frameworks */,
 				E42B801E2788FA89000DB881 /* RxSwift in Frameworks */,
+				E42B8033278980B5000DB881 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,9 +192,28 @@
 			path = Popups;
 			sourceTree = "<group>";
 		};
+		E42B802E2789803B000DB881 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				E42B802F27898086000DB881 /* HourGlassLoaderView.swift */,
+				E42B8034278980DD000DB881 /* LottieAnimation.swift */,
+				E42B803827898102000DB881 /* Animations */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
+		E42B803827898102000DB881 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				E42B8036278980FF000DB881 /* Hourglass.json */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
 		E42DDE92270D012100E0273E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E42B802E2789803B000DB881 /* Lottie */,
 				E42B802927891241000DB881 /* Popups */,
 				E42B802327890972000DB881 /* About */,
 				E425F0372713880800568436 /* Song */,
@@ -386,6 +413,7 @@
 				E42B801D2788FA89000DB881 /* RxSwift */,
 				E42B801F2788FA89000DB881 /* RxCocoa */,
 				E42B80212788FA89000DB881 /* RxRelay */,
+				E42B8032278980B5000DB881 /* Lottie */,
 			);
 			productName = Pielgrzym;
 			productReference = E4FDF7712703C8560025D0CB /* Pielgrzym.app */;
@@ -416,6 +444,7 @@
 			mainGroup = E4FDF7682703C8560025D0CB;
 			packageReferences = (
 				E42B801C2788FA89000DB881 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				E42B8031278980B5000DB881 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = E4FDF7722703C8560025D0CB /* Products */;
 			projectDirPath = "";
@@ -431,6 +460,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E42B8037278980FF000DB881 /* Hourglass.json in Resources */,
 				E4FDF77C2703C8580025D0CB /* Preview Assets.xcassets in Resources */,
 				E4FDF7792703C8580025D0CB /* Assets.xcassets in Resources */,
 			);
@@ -445,6 +475,7 @@
 			files = (
 				E42B802527890981000DB881 /* AboutView.swift in Sources */,
 				E425F034270E4AF100568436 /* SearchBar.swift in Sources */,
+				E42B803027898086000DB881 /* HourGlassLoaderView.swift in Sources */,
 				E425F04027141D0300568436 /* IconImage.swift in Sources */,
 				E42DDEA9270D034000E0273E /* Song.swift in Sources */,
 				E425F0532716DC8700568436 /* LoaderView.swift in Sources */,
@@ -461,6 +492,7 @@
 				E425F0562716FA2700568436 /* SongSectionIcon.swift in Sources */,
 				E425F03C2713884300568436 /* SongViewModel.swift in Sources */,
 				E425F036270E4C3300568436 /* Ext+Color.swift in Sources */,
+				E42B8035278980DD000DB881 /* LottieAnimation.swift in Sources */,
 				E43C6E672728967800303544 /* SongListNavigation.swift in Sources */,
 				E42DDEB4270D085000E0273E /* RootNavigationView.swift in Sources */,
 				E42DDEA6270D027000E0273E /* SongSectionType.swift in Sources */,
@@ -676,6 +708,14 @@
 				minimumVersion = 6.2.0;
 			};
 		};
+		E42B8031278980B5000DB881 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.3.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -693,6 +733,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E42B801C2788FA89000DB881 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxRelay;
+		};
+		E42B8032278980B5000DB881 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E42B8031278980B5000DB881 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

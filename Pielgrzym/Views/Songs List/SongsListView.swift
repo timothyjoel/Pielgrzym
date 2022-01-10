@@ -12,7 +12,6 @@ struct SongsListView: View {
     @ObservedObject var vm = SongsListViewModel()
     @State var likedSongs: Bool = false
     @State var about: Bool = false
-    @State var contact: Bool = false
     @State var searchEntry: String = ""
     
     @State var setBlur: Bool = false
@@ -28,18 +27,15 @@ struct SongsListView: View {
                     SearchBar(placeholder: vm.searchPlaceholder, text: $searchEntry)
                     .padding(.horizontal, 8)
                     SongsList(searchEntry: $searchEntry, songs: $vm.songs)
+                        .background(Color.background)
                 }
                 NavigationLink(
                     destination: LikedSongsListView(vm: LikedSongsListViewModel(allSongs: vm.songs)),
                     isActive: $likedSongs,
                     label: { })
                 NavigationLink(
-                    destination: Text("Destination2"),
+                    destination: AboutView(),
                     isActive: $about,
-                    label: { })
-                NavigationLink(
-                    destination: Text("Destination3"),
-                    isActive: $contact,
                     label: { })
             }
             .background(Color.background)
@@ -54,7 +50,7 @@ struct SongsListView: View {
                 }
                 
                 ToolbarItemGroup(placement: .navigationBarLeading) {
-                    SongsListMenu(vm: vm, likedSongs: $likedSongs, contact: $contact, about: $about)
+                    SongsListMenu(vm: vm, likedSongs: $likedSongs, about: $about)
                 }
             }
         }
@@ -125,22 +121,22 @@ struct SongsListMenu: View {
     
     @ObservedObject var vm: SongsListViewModel
     @Binding var likedSongs: Bool
-    @Binding var contact: Bool
     @Binding var about: Bool
     
     var body: some View {
         Menu {
             MenuItem(type: .likedSongs, action: {
-                print("open liked songs")
                 likedSongs.toggle()
             })
             MenuItem(type: .about, action: {
-                print("open about")
                 about.toggle()
             })
             MenuItem(type: .contact, action: {
-                print("open about")
-                contact.toggle()
+                let mailtoString = "mailto:timothy.stokarski@gmail.com".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+                let mailtoUrl = URL(string: mailtoString!)!
+                if UIApplication.shared.canOpenURL(mailtoUrl) {
+                        UIApplication.shared.open(mailtoUrl, options: [:])
+                }
             })
         }
         label: {

@@ -33,7 +33,7 @@ extension EdgeInsets {
 extension View {
     func hideRowSeparator(
         insets: EdgeInsets = .defaultListRowInsets,
-        background: Color = .white
+        background: Color = .background
     ) -> some View {
         modifier(HideRowSeparatorModifier(
             background: background

@@ -30,6 +30,8 @@ struct PielgrzymApp: App {
                 UINavigationBar.appearance().standardAppearance = newAppearance
                 UINavigationBar.appearance().tintColor = UIColor.label
                 UITableViewCell.appearance().selectionStyle = .none
+                UITableViewCell.appearance().backgroundColor = .systemBackground
+                UITableView.appearance().backgroundColor = .systemBackground
             @unknown default:
                 print("Unknown state")
             }

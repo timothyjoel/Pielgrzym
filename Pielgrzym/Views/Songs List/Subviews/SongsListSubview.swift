@@ -23,16 +23,23 @@ struct SongsList: View {
                         Text("\(song.id).")
                             .font(.text)
                             .foregroundColor(Color.label)
+                            .background(Color.background)
                         Text(song.title)
                             .font(.text)
                             .foregroundColor(Color.label)
+                            .background(Color.background)
                     }
+                    .listRowBackground(Color.green)
+                    .background(Color.background)
                 }
+                .listRowBackground(Color.pink)
+                .background(Color.background)
                 .padding(.horizontal, 16)
                 .hideRowSeparator()
-                .listRowBackground(Color.clear)
             }
         }
+        .listRowBackground(Color.pink)
+        .background(Color.background)
         .listStyle(PlainListStyle())
         .navigationBarTitle("")
         .navigationBarTitleDisplayMode(.inline)

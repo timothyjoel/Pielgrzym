@@ -20,7 +20,6 @@ struct LikedSongsListView: View {
                     .padding(.horizontal, 8)
                 LikedSongsList(songs: $vm.songs)
             }
-            .blur(radius: self.showConfirmDeleteAllPopup ? 10 : 0)
             .background(Color.background)
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
@@ -32,7 +31,6 @@ struct LikedSongsListView: View {
                 }
                 
             }
-            .navigationBarHidden(showConfirmDeleteAllPopup)
             SingleActionPopup(showView: $showConfirmDeleteAllPopup, popup: .removeAllLikedSongs) {
                 self.vm.removeLikedSongs()
                 self.showConfirmDeleteAllPopup.toggle()
