@@ -36,7 +36,6 @@ public final class SongViewModel: ObservableObject {
     private func like() {
         isLiked.toggle()
         db.like(song: id)
-        print("like id:\(id)")
     }
     
     private func unLike() {

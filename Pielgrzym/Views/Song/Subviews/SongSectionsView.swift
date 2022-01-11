@@ -10,10 +10,11 @@ import SwiftUI
 struct SectionsView: View {
     
     var sections: [SongSection]
+    @Binding var fontSize: CGFloat
     
     var body: some View {
         ForEach(sections, id: \.self) { section in
-            SectionView(section: section)
+            SectionView(section: section, fontSize: $fontSize)
                 .hideRowSeparator()
                 .padding(.horizontal, 16)
         }

@@ -10,13 +10,14 @@ import SwiftUI
 struct AuthorHeader: View {
     
     var author: String
+    @Binding var fontSize: CGFloat
     
     var body: some View {
         ZStack {
             
             HStack {
                 Text(author)
-                    .font(.text)
+                    .font(.system(size: fontSize, weight: .regular, design: .default))
                     .lineLimit(nil)
                     .padding(.horizontal, 16)
                     .padding(.top, 20)
@@ -31,9 +32,9 @@ struct AuthorHeader: View {
             VStack {
                 HStack {
                     HStack(spacing: 4) {
-                        SongSectionIcon(image: .author, color: .purple)
+                        SongSectionIcon(image: .author, color: .purple, fontSize: $fontSize)
                         Text("Autor")
-                            .font(.header)
+                            .font(.system(size: fontSize, weight: .semibold, design: .rounded))
                             .foregroundColor(.label)
                     }
                     .padding(.horizontal, 4)
@@ -42,7 +43,7 @@ struct AuthorHeader: View {
                 }
                 .padding(.leading, 24)
                 Spacer()
-            }.padding(.top, 4)
+            }.padding(.top, (-fontSize + 26)/2)
         }
         .hideRowSeparator()
         .padding(.horizontal, 16)

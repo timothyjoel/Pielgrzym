@@ -11,13 +11,14 @@ struct SongSectionIcon: View {
     
     var image: IconImage.Song
     var color: Color
+    @Binding var fontSize: CGFloat
     
     var body: some View {
         
         Image(systemName: image.name)
             .resizable()
-            .font(.system(size: 16, weight: .semibold))
-            .frame(width: 20, height: 20)
+            .font(.system(size: fontSize - 2, weight: .semibold))
+            .frame(width: fontSize + 2, height: fontSize + 2)
             .foregroundColor(color)
     }
     

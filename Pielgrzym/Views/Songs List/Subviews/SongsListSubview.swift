@@ -32,7 +32,7 @@ struct SongsList: View {
                     .listRowBackground(Color.green)
                     .background(Color.background)
                 }
-                .listRowBackground(Color.pink)
+                .listRowBackground(Color.background)
                 .background(Color.background)
                 .padding(.horizontal, 16)
                 .hideRowSeparator()
